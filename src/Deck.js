@@ -1,14 +1,10 @@
 class Deck {
-  constructor(card){
-    this.cards = []
+  constructor(cards){
+    this.cards = cards
   }
 
   countCards(){
     return this.cards.length;
-  }
-
-  addCard(card){
-    this.cards.push(card);
   }
 }
 
