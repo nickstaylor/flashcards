@@ -18,12 +18,14 @@ describe('Turn', function() {
   });
 
   it('should store a user guess', function() {
-    const card1 = new Card({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer: 'sea otter'});
+    const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const card2 = new Card(4, "What type of prototype method does not modify the existing array but returns a particular representation of the array?",
+      ["mutator method", "accessor method", "iteration method"],"accessor method")
     const turn1 = new Turn( 'pug', card1);
-    const turn2 = new Turn ('deer', card1)
+    const turn2 = new Turn('accessor method', card2)
 
     expect(turn1.guess).to.equal('pug');
-    expect(turn2.guess).to.equal('deer');
+    expect(turn2.guess).to.equal('accessor method');
   });
 
   it('should take in a card instance', function() {
@@ -53,5 +55,7 @@ describe('Turn', function() {
     turn2.giveFeedback();
     expect(turn2.giveFeedback()).to.equal('correct!');
   })
+
+
 
 });
