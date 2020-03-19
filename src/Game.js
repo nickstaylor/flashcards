@@ -13,6 +13,10 @@ class Game {
   printQuestion(round) {
       util.main(round);
   }
+
+  start(){
+    let card = new Card(prototypeQuestions[i])
+  }
 }
 
 module.exports = Game;

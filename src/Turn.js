@@ -10,24 +10,21 @@ class Turn{
 
   returnCard(){
     return this.card
-  // this.card.push(card);
   }
 
   evaluateGuess(){
     if (this.guess === this.card.correctAnswer){
       return true;
-    } else {
-      return false;
     }
+    return false;
+
   }
 
   giveFeedback(){
     if (this.evaluateGuess() === true){
-      return `correct!`
-    } else {
-      return 'incorrect!'
+      return 'correct!'
     }
-
+      return 'incorrect!'
   }
 }
 
