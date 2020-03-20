@@ -49,7 +49,10 @@ describe('Turn', function() {
     const turn2 = new Turn('accessor method', card2);
 
     turn1.evaluateGuess();
+    expect(turn1.evaluateGuess()).to.equal(false);
+    // console.log(turn1.evaluateGuess());
     turn1.giveFeedback();
+    // console.log(turn1.giveFeedback());
     expect(turn1.giveFeedback()).to.equal('incorrect!');
     turn2.evaluateGuess();
     turn2.giveFeedback();

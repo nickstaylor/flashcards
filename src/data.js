@@ -5,9 +5,9 @@ const prototypeData = [{
   "correctAnswer": "object"
 }, {
   "id": 2,
-  "question": "What is a comma-separated list of related values?",
-  "answers": ["array", "object", "function"],
-  "correctAnswer": "array"
+  "question": "Who played 3rd base for the Colorado Rockies during the 1995 strike-shortened season?",
+  "answers": ["Walt Weiss", "Vinny Castilla", "Harry Carey"],
+  "correctAnswer": "Vinny Castilla"
 }, {
   "id": 3,
   "question": "What type of prototype method directly modifies the existing array?",
@@ -151,5 +151,5 @@ const prototypeData = [{
 }]
 
 module.exports = {
-  prototypeData 
+  prototypeData
 }

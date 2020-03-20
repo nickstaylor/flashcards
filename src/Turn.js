@@ -9,7 +9,7 @@ class Turn{
   }
 
   returnCard(){
-    return this.card
+    return this.card;
   }
 
   evaluateGuess(){
@@ -22,9 +22,9 @@ class Turn{
 
   giveFeedback(){
     if (this.evaluateGuess() === true){
-      return 'correct!'
+      return 'correctamundo! Hit return Sparky.'
     }
-      return 'incorrect!'
+      return `incorrect. But you're still awesome! Hit return.`
   }
 }
 
