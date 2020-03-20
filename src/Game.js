@@ -16,6 +16,7 @@ class Game {
         let card = new Card(item.id, item.question, item.answers, item.correctAnswer)
         return card
     });
+    
     let deck = new Deck(cards);
     let round = new Round(deck);
     this.currentRound = round;
