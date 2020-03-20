@@ -33,7 +33,6 @@ describe('Turn', function() {
     ["mutator method", "accessor method", "iteration method"],"accessor method")
     const turn1 = new Turn( 'pug', card1);
     const turn2 = new Turn('accessor method', card2);
-
     turn1.returnCard();
     expect(turn1.card).to.equal(card1);
     turn2.returnCard();
