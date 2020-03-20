@@ -4,7 +4,6 @@ const expect = chai.expect;
 const Card = require('../src/Card')
 const Turn = require('../src/Turn');
 
-
 describe('Turn', function() {
 
   it('should be a function', function() {
@@ -20,7 +19,7 @@ describe('Turn', function() {
   it('should store a user guess', function() {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(4, "What type of prototype method does not modify the existing array but returns a particular representation of the array?",
-      ["mutator method", "accessor method", "iteration method"],"accessor method")
+    ["mutator method", "accessor method", "iteration method"],"accessor method")
     const turn1 = new Turn( 'pug', card1);
     const turn2 = new Turn('accessor method', card2)
 
@@ -31,7 +30,7 @@ describe('Turn', function() {
   it('should take in a card instance', function() {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(4, "What type of prototype method does not modify the existing array but returns a particular representation of the array?",
-      ["mutator method", "accessor method", "iteration method"],"accessor method")
+    ["mutator method", "accessor method", "iteration method"],"accessor method")
     const turn1 = new Turn( 'pug', card1);
     const turn2 = new Turn('accessor method', card2);
 
@@ -45,20 +44,15 @@ describe('Turn', function() {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const turn1 = new Turn('pug', card1);
     const card2 = new Card(4, "What type of prototype method does not modify the existing array but returns a particular representation of the array?",
-      ["mutator method", "accessor method", "iteration method"],"accessor method")
+    ["mutator method", "accessor method", "iteration method"],"accessor method")
     const turn2 = new Turn('accessor method', card2);
 
     turn1.evaluateGuess();
     expect(turn1.evaluateGuess()).to.equal(false);
-    // console.log(turn1.evaluateGuess());
     turn1.giveFeedback();
-    // console.log(turn1.giveFeedback());
-    expect(turn1.giveFeedback()).to.equal('incorrect!');
+    expect(turn1.giveFeedback()).to.equal('incorrect. But you\'re still awesome! Hit return.');
     turn2.evaluateGuess();
     turn2.giveFeedback();
-    expect(turn2.giveFeedback()).to.equal('correct!');
+    expect(turn2.giveFeedback()).to.equal('correctamundo! Hit return Sparky.');
   })
-
-
-
 });

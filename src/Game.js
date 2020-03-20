@@ -12,20 +12,16 @@ class Game {
   }
 
   start(){
-    // console.log(testQuestions);
     let cards = prototypeQuestions.map(function(item){
         let card = new Card(item.id, item.question, item.answers, item.correctAnswer)
         return card
     });
-
     let deck = new Deck(cards);
     let round = new Round(deck);
     this.currentRound = round;
-
     this.printMessage(deck, round);
     this.printQuestion(round);
   }
-
 
   printMessage(deck, round) {
       console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards. Good Luck Sparky!
@@ -35,8 +31,6 @@ class Game {
   printQuestion(round) {
       util.main(round);
   }
-
-
 }
 
 module.exports = Game;

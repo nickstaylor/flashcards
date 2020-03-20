@@ -8,7 +8,6 @@ const Round = require('../src/Round');
 const Game = require('../src/Game');
 const data = require('../src/data');
 const prototypeQuestions = data.prototypeData;
-
 const testQuestions = [prototypeQuestions[0], prototypeQuestions[1], prototypeQuestions[2]];
 
 describe('Game', function() {
