@@ -17,7 +17,6 @@ class Turn{
       return true;
     }
     return false;
-
   }
 
   giveFeedback(){

@@ -27,7 +27,6 @@ describe('Round', function() {
     const round = new Round(deck);
 
     expect(round.deck).to.deep.equal(deck);
-    // expect(round.deck).to.deep.equal([card1, card2, card3]);
   });
 
   it('should return current card being played', function() {
@@ -38,7 +37,6 @@ describe('Round', function() {
     const round = new Round(deck);
 
     let currentCard = round.returnCurrentCard();
-    // console.log(round.returnCurrentCard());
     expect(currentCard).to.equal(card1);
   });
 
@@ -49,11 +47,9 @@ describe('Round', function() {
       const deck = new Deck([card1, card2, card3]);
       const round = new Round(deck);
 
-      // let currentCard = round.returnCurrentCard();
       round.returnCurrentCard();
       round.takeTurn('pug')
       const turn1 = new Turn( 'pug', card1);
-      // console.log(currentCard);
       expect(round.turns).to.equal(1);
 
       round.returnCurrentCard();
@@ -149,7 +145,7 @@ describe('Round', function() {
       round.takeTurn('pug')
       const turn1 = new Turn( 'pug', card1);
       expect(turn1.evaluateGuess()).to.equal(false);
-      expect(turn1.giveFeedback()).to.equal('incorrect!');
+      expect(turn1.giveFeedback()).to.equal('incorrect. But you\'re still awesome! Hit return.');
 
       expect(round.turns).to.equal(1);
       expect(round.incorrectGuesses.length).to.equal(1);
@@ -159,14 +155,14 @@ describe('Round', function() {
       const turn2 = new Turn('lung', card2);
       expect(round.turns).to.equal(2);
       expect(turn2.evaluateGuess()).to.equal(false);
-      expect(turn2.giveFeedback()).to.equal('incorrect!');
+      expect(turn2.giveFeedback()).to.equal('incorrect. But you\'re still awesome! Hit return.');
 
       expect(round.incorrectGuesses).to.deep.equal([1, 14]);
 
       round.returnCurrentCard();
       round.takeTurn('Fitzgerald')
       const turn3 = new Turn('Fitzgerald', card3);
-      expect(turn3.giveFeedback()).to.equal('correct!');
+      expect(turn3.giveFeedback()).to.equal('correctamundo! Hit return Sparky.');
       expect(round.turns).to.equal(3);
       expect(turn3.evaluateGuess()).to.equal(true);
       expect(round.incorrectGuesses).to.deep.equal([1, 14]);
@@ -184,7 +180,7 @@ describe('Round', function() {
       round.takeTurn('pug')
       const turn1 = new Turn( 'pug', card1);
       expect(turn1.evaluateGuess()).to.equal(false);
-      expect(turn1.giveFeedback()).to.equal('incorrect!');
+      expect(turn1.giveFeedback()).to.equal('incorrect. But you\'re still awesome! Hit return.');
 
       expect(round.turns).to.equal(1);
       expect(round.incorrectGuesses.length).to.equal(1);
@@ -194,21 +190,20 @@ describe('Round', function() {
       const turn2 = new Turn('lung', card2);
       expect(round.turns).to.equal(2);
       expect(turn2.evaluateGuess()).to.equal(false);
-      expect(turn2.giveFeedback()).to.equal('incorrect!');
+      expect(turn2.giveFeedback()).to.equal('incorrect. But you\'re still awesome! Hit return.');
 
       expect(round.incorrectGuesses).to.deep.equal([1, 14]);
 
       round.returnCurrentCard();
       round.takeTurn('Fitzgerald')
       const turn3 = new Turn('Fitzgerald', card3);
-      expect(turn3.giveFeedback()).to.equal('correct!');
+      expect(turn3.giveFeedback()).to.equal('correctamundo! Hit return Sparky.');
       expect(round.turns).to.equal(3);
       expect(turn3.evaluateGuess()).to.equal(true);
       expect(round.incorrectGuesses).to.deep.equal([1, 14]);
 
       round.calculatePercentCorrect()
-      expect(round.calculatePercentCorrect()).to.equal('You got 33.33333333333333% correct!');
-
+      expect(round.calculatePercentCorrect()).to.equal(33);
     })
 
 });
