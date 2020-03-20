@@ -38,9 +38,6 @@ class Round {
     if (this.calculatePercentCorrect() > 90){
       console.log("Check out the BIG BRAIN on YOU!!!")
     }
-    if(this.calculatePercentCorrect() === 100){
-      console.log("Clearly, you had Kyle's help.  Do it yourself next time.  Loser!")
-    }
     console.log(`**Round Over!** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
   }
 }
